@@ -744,7 +744,7 @@ The r_tables are used in the ListNet loss during training, replacing the generic
 
 ## Enhancement 3: KZ-Specific Pretraining
 
-The Kol-Zchut expert receives better initialization through a weak supervision pipeline:
+The Kol-Zchut expert receives better initialization through a weak supervision pipeline using the [Webiks Hebrew RAGbot KolZchut QA Training Dataset](https://github.com/NNLP-IL/Webiks-Hebrew-RAGbot-KolZchut-QA-Training-DataSet):
 
 ### Step 1: Select Promising Questions
 

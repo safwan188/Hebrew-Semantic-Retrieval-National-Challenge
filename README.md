@@ -852,7 +852,7 @@ Critical passages are sent to an LLM for human-quality labeling:
               ↓
 ┌─────────────────────────────────┐
 │  LLM Relabeling                 │
-│  (GPT-4 / Claude with rubric)   │
+│  (GPT-5 / Gemini with rubric)   │
 └─────────────────────────────────┘
               ↓
 ┌─────────────────────────────────┐
@@ -1155,7 +1155,7 @@ Token-length distributions vary significantly (BGE tokenizer):
 
 Wikipedia passages are short; KZ and Knesset have heavy long tails (>1K tokens). This motivated corpus-specific max sequence lengths:
 
-- **Wiki**: 360 (covers p90)
+- **Wiki**: 360 (prioritizes direct short answers over complex content at passage end)
 - **KZ**: 448 (covers median+)
 - **Knesset**: 496 (covers p95)
 

@@ -8,6 +8,26 @@ This writeup documents my solution for the **MAFAT Hebrew Semantic Retrieval Nat
 
 ---
 
+## Table of Contents
+
+1. [Task Definition](#task-definition) — Input/output format, data structure, evaluation metric
+2. [Constraints](#constraints) — Hardware, runtime limits, submission format
+3. [Why Hebrew Retrieval is Hard](#why-hebrew-retrieval-is-hard) — Morphology, ambiguity, domain challenges
+4. [Solution Overview](#solution-overview) — Two-stage pipeline architecture
+5. **Model 1: Two-Stage Retrieval with MoE Reranking**
+   - [Part 1: Inference Pipeline](#part-1-inference-pipeline-submission) — Stage-1 retrieval, Stage-2 reranking, efficiency optimizations
+   - [Part 2: Training](#part-2-training-offline) — Candidate construction, cross-encoder training, router training, data augmentation
+6. **Model 2: Knowledge-Distilled Training**
+   - [Overview](#overview) — Enhancements over Model 1
+   - [Enhancement 1: Knowledge Distillation](#enhancement-1-knowledge-distillation) — Teacher pipeline, listwise KD loss
+   - [Enhancement 2: Per-Corpus Rating Tables](#enhancement-2-per-corpus-rating-tables) — Custom gain mappings
+   - [Enhancement 3: KZ-Specific Pretraining](#enhancement-3-kz-specific-pretraining) — Weak supervision pipeline
+   - [Enhancement 4: Critical Passage Relabeling](#enhancement-4-critical-passage-relabeling) — LLM-assisted label cleaning
+   - [Enhancement 5: General Cross-Encoder](#enhancement-5-general-cross-encoder-for-low-confidence-routing) — Low-confidence fallback
+7. [Observations & Experiments](#observations--experiments) — Empirical findings that guided design choices
+
+---
+
 ## Task Definition
 
 **Input**: Hebrew query string
@@ -22,8 +42,6 @@ This writeup documents my solution for the **MAFAT Hebrew Semantic Retrieval Nat
 ```
 
 ### Data Structure
-
-*Note: The examples below use simplified field names; the official files use `paragraph_uuid`, `query_uuid`, and slightly different structures.*
 
 **Corpus**: A dictionary mapping paragraph UUIDs to their content:
 ```python

@@ -6,6 +6,8 @@ This writeup documents my solution for the **MAFAT Hebrew Semantic Retrieval Nat
 
 **Goal**: Given a natural language query in Hebrew, retrieve and rank the most relevant paragraphs from a large corpus spanning Wikipedia, Knesset protocols, and Kol-Zchut (legal/civic rights documentation).
 
+**Result**: #1 on public leaderboard, #10 on private leaderboard.
+
 ---
 
 ## Table of Contents

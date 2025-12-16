@@ -1000,7 +1000,7 @@ This section documents key findings from offline experiments on the training dat
 
 We evaluated several embedding models on Stage-1 retrieval (dense only, no TF-IDF):
 
-| Model | Recall@50 | nDCG@50 |
+| Model | Recall@50 | UB-nDCG@50 |
 |-------|-----------|---------|
 | **E5-large** | 0.707 | 0.672 |
 | BGE-M3 | 0.662 | 0.671 |

@@ -120,7 +120,7 @@ def predict(query_dict, preprocessed_data):
 
 **4. Heterogeneous Domains** — Wikipedia (encyclopedic), Knesset (parliamentary), and Kol-Zchut (legal) have vastly different vocabulary, style, and passage lengths.
 
-**5. Long Passages** — Many paragraphs exceed typical 512-token length.
+
 
 ---
 

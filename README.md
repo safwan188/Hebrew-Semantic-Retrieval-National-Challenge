@@ -8,6 +8,11 @@ This writeup documents my solution for the **MAFAT Hebrew Semantic Retrieval Nat
 
 **Result**: #1 on public leaderboard, #10 on private leaderboard.
 
+### Model Downloads
+
+- [Model 1](https://drive.google.com/file/d/1Zs7xSsmZ-448nwwzLdse73Ddy6gKrOxm/view?usp=drive_link) (4.7 GB) — Two-Stage Retrieval with MoE Reranking
+- [Model 2](https://drive.google.com/file/d/1FPNMe0tW0EVhwltpOyKThAgLkGmEN9Ox/view?usp=drive_link) (5.3 GB) — Knowledge-Distilled Training
+
 ---
 
 ## Table of Contents
